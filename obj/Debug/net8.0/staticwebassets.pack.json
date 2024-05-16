@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "d:\\repos\\UG\\artesania\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\artesania.bundle.scp.css",
+      "PackagePath": "staticwebassets\\artesania.bundle.scp.css"
+    },
+    {
+      "Id": "d:\\repos\\UG\\artesania\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "d:\\repos\\UG\\artesania\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "d:\\repos\\UG\\artesania\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "d:\\repos\\UG\\artesania\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.artesania.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.artesania.props",
+      "PackagePath": "build\\artesania.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.artesania.props",
+      "PackagePath": "buildMultiTargeting\\artesania.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.artesania.props",
+      "PackagePath": "buildTransitive\\artesania.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
