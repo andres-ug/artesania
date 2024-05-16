@@ -1,0 +1,128 @@
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test Results
+TestResults/
+
+# .NET Core
+*.swp
+*.*~
+project.lock.json
+.nuget/
+
+# Microsoft Visual Studio
+.vs/
+*.user
+*.aps
+*.class
+*.resx
+*.ncb
+*.suo
+*.obj
+*.sbr
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sdf
+*.opensdf
+*.unsuccessful
+ipch/
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+
+# MonoDevelop
+*.pidb
+*.userprefs
+
+# Subversion files
+.svn/
+
+# Office Temp Files
+~$*
+
+# vim Temp Files
+*.swp
+
+# NuGet
+packages/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Blazor WASM output
+wwwroot/
+
+# User-specific files
+*.rsuser
+**/*.user
+**/*.userosscache
+**/*.unsuccessful
+**/*.firstbuild
+**/*.bak
+**/*.swp
+**/*.swo
+**/Dockerfile.*.bak
+
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+# Microsoft Azure Emulator
+ecf/
+rcf/
+
+# Windows Store interface
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!?*.[Cc]ache/
+
+# Others
+ClientApp/
+node_modules/
+wwwroot/
