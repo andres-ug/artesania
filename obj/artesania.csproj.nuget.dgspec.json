@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\repos\\UG\\artesania\\artesania.csproj": {}
+    "D:\\repos\\UG\\artesania-2\\artesania\\artesania.csproj": {}
   },
   "projects": {
-    "d:\\repos\\UG\\artesania\\artesania.csproj": {
+    "D:\\repos\\UG\\artesania-2\\artesania\\artesania.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\repos\\UG\\artesania\\artesania.csproj",
+        "projectUniqueName": "D:\\repos\\UG\\artesania-2\\artesania\\artesania.csproj",
         "projectName": "artesania",
-        "projectPath": "d:\\repos\\UG\\artesania\\artesania.csproj",
+        "projectPath": "D:\\repos\\UG\\artesania-2\\artesania\\artesania.csproj",
         "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
-        "outputPath": "d:\\repos\\UG\\artesania\\obj\\",
+        "outputPath": "D:\\repos\\UG\\artesania-2\\artesania\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",

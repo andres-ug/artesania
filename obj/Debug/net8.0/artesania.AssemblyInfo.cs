@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("artesania")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8b406c7275846178b878f32e35fce3ee8a49b00")]
 [assembly: System.Reflection.AssemblyProductAttribute("artesania")]
 [assembly: System.Reflection.AssemblyTitleAttribute("artesania")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\UG\\artesania\\artesania.csproj",
+      "projectUniqueName": "D:\\repos\\UG\\artesania-2\\artesania\\artesania.csproj",
       "projectName": "artesania",
-      "projectPath": "D:\\repos\\UG\\artesania\\artesania.csproj",
+      "projectPath": "D:\\repos\\UG\\artesania-2\\artesania\\artesania.csproj",
       "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\UG\\artesania\\obj\\",
+      "outputPath": "D:\\repos\\UG\\artesania-2\\artesania\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
