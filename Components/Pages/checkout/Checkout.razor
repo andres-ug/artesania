@@ -1,0 +1,146 @@
+@page "/cart"
+@using artesania.Entities
+@using artesania.Services
+@inject CartService cartService
+@rendermode InteractiveServer
+
+@code {
+    [SupplyParameterFromForm]
+    public Customer? customer { get; set; }
+    private Modal ModalInstance { get; set; } = new();
+
+    private void showModal()
+    {
+        ModalInstance.Open();
+    }
+
+    protected override void OnInitialized() => customer ??= new();
+
+    private async Task Buy()
+    {
+        await cartService.MakePurchase(customer!);
+        cartService.ClearCart();
+        showModal();
+       
+    }
+
+
+}
+
+<Modal @ref="ModalInstance" />
+
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/img/Metodo de pago.png" alt="" width="600" height="220" />
+        <h2>Formulario de compra</h2>
+        <p class="lead">
+            ¡Estas a un paso de completar la compra!<br>
+            Revisa los artículos y asegurate que esté todo correcto, para finalizar la compra
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your cart</span>
+                <span class="badge badge-secondary badge-pill">3</span>
+            </h4>
+            <ul class="list-group mb-3">
+                @foreach (var item in cartService.Cart)
+                {
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">@item.Product.Name</h6>
+                            <small class="text-muted">@item.Product.Description</small>
+                        </div>
+                        <span class="text-muted">$@item.Product.Price</span>
+                    </li>
+                }
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (USD)</span>
+                    <strong>$@cartService.Cart.Select(x => x.Product.Price * x.Quantity).Sum()</strong>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Datos de facturación</h4>
+            <form Model="customer" @onsubmit="Buy">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Nombre</label>
+                        <InputText class="form-control" id="firstName" @bind-Value="customer!.FirstName" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Apellidos</label>
+                        <InputText class="form-control" id="lastName" @bind-Value="customer!.LastName" required />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+                    <InputText type="email" class="form-control" id="email" placeholder="you@example.com"
+                        @bind-Value="customer!.Email" required />
+                    <div class="invalid-feedback">
+                        Información requerida.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Dirección</label>
+                    <InputText type="text" class="form-control" id="address" placeholder="1234 Main St"
+                        @bind-Value="customer!.Address" required />
+                    <div class="invalid-feedback">
+                        Información requerida.
+                    </div>
+                </div>
+
+                <hr class="mb-4" />
+
+                <h4 class="mb-3">Método de pago</h4>
+
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-name">Nombre de la tarjeta</label>
+                        <InputText class="form-control" id="cc-name" @bind-Value="customer!.CardName" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-number">Número de la tarjeta</label>
+                        <InputText class="form-control" id="cc-number" @bind-Value="customer!.CardNumber" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-expiration">Expiración</label>
+                        <InputText class="form-control" id="cc-expiration" @bind-Value="customer!.Expiration"
+                            required />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-cvv">CVV</label>
+                        <InputText class="form-control" id="cc-cvv" @bind-Value="customer!.CVV" required />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Continua para finalizar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2024 "La tradición ecuatoriana"</p>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="#">Privacy</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Terms</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Support</a>
+            </li>
+        </ul>
+    </footer>
+</div>

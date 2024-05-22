@@ -1,10 +1,16 @@
+using artesania.Automapper;
 using artesania.Components;
+using artesania.Database;
+using artesania.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddDbContext<ArtesaniaContext>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped<CartService>();
 
 var app = builder.Build();
 

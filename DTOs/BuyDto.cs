@@ -1,8 +1,9 @@
-﻿namespace artesania.Entities;
+﻿using artesania.Entities;
 
-public class Buy
+namespace artesania.DTOs;
+
+public class BuyDto
 {
-    public int Id { get; set; }
     public string Identification { get; set; }
     public string Name { get; set; }
     public string Direction { get; set; }

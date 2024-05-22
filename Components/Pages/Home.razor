@@ -1,3 +1,86 @@
 ﻿@page "/"
+@using artesania.Components.Main
+@using artesania.Database
+@using artesania.DTOs
+@using artesania.Services
+@using AutoMapper
+@inject ArtesaniaContext Context
+@inject IMapper mapper
+@inject CartService cartService
+@rendermode InteractiveServer
 
-<h1>Hola</h1>
+<div class="navbar navbar-dark bg-dark">
+    <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="45" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
+                viewBox="0 0 24 24" focusable="false">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+            </svg>
+            <strong>REFERENCIAS DE LOS PRODUCTOS ARTESANALES </strong>
+
+        </a>
+
+        <div class="shopping-cart-section">
+            <a href="/cart">
+            Pagar
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-cart-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zm3.915 10a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                </svg>
+                <span>@(cartService.Cart?.Select(x => x.Quantity)?.Sum() ?? 0)</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<main role="main">
+    <section class="jumbotron text-center" style="background-color: pink;">
+        <style>
+            .jumbotron {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQnnJ9RfrGjGirWRYMnw0DbPcSof5L74DMfw&s');
+                /
+            }
+        </style>
+
+
+        <div class="container" style="color: black">
+
+            <h1>TIENDA ARTESANAL "LA TRADICION ECUATORIANA" </h1>
+
+
+            <div class="container">
+                <p class="lead text-black">
+                    Empresa dedicada a la venta de sombreros de paja toquilla, anacos y una variedad de vestimenta para
+                    tus ocasiones especiales.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                @foreach (var product in Context.Products)
+                {
+                    <ProductCard Producto="mapper.Map<ProductDto>(product)" OnAddToCart="cartService.AddToCart"
+                        OnRemoveToCart="cartService.RemoveFromCart" />
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Regresar arriba</a>
+        </p>
+        <p>
+            Tienda de venta de artesanias Ecuatorianas
+        </p>
+    </div>
+</footer>

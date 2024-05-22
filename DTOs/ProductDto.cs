@@ -1,8 +1,7 @@
-﻿namespace artesania.Entities;
+﻿namespace artesania.DTOs;
 
-public class Product
+public class ProductDto
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public string ImageURL { get; set; }
     public string Description { get; set; }

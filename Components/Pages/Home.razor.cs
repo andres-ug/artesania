@@ -1,6 +1,12 @@
-﻿namespace artesania.Components.Pages;
+﻿using artesania.DTOs;
+using artesania.Services;
 
-public class Home_razor
+namespace artesania.Components.Pages;
+
+public partial class Home
 {
-    
+    protected override void OnInitialized()
+    {
+        cartService.ClearCart();
+    }
 }
